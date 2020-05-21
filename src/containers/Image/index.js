@@ -23,8 +23,10 @@ class ImageUpload extends Component {
           this.props.getFile(response.link);
           this.setState({ isFileUploaded: true });
         }
+        toast.success("File uploaded sucessfully")
       })
       .catch((error) => {
+        toast.error("Error uploading file")
         console.error(error);
       });
   };
