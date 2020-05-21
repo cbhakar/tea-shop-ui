@@ -19,8 +19,9 @@ export const addItemService = (payload) => {
   return axios
     .post(endpoint.addTea(), payload)
     .then((response) => {
-      return successHandler(response).then(({ result }) => {
-        return result;
+      return successHandler(response).then((data) => {
+        debugger
+        return data;
       });
     })
     .catch((error) => {

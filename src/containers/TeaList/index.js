@@ -14,14 +14,14 @@ class TeaList extends Component {
   }
 
   render() {
-    const { listTeaAr } = this.props;
+    const { listTeaAr, itemCount } = this.props;
     return (
       <div className="tea-list-container">
         {listTeaAr &&
           listTeaAr.map((item, index) => {
             return (
               <Fragment key={index}>
-                <TeaItem item={item} deleteTea={this.deleteTea}/>
+                <TeaItem item={item} deleteTea={this.deleteTea} itemCount={itemCount}/>
               </Fragment>
             );
           })}
@@ -33,6 +33,7 @@ class TeaList extends Component {
 const mapStateToProps = (state) => {
   return {
     listTeaAr: state.tea.listTeaAr || [],
+    itemCount: state.tea.itemCount
   };
 };
 

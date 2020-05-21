@@ -5,7 +5,7 @@ import deleteImg from "../../resources/icons/delete.svg";
 import addImg from "../../resources/icons/add.svg";
 import { withRouter } from "react-router-dom";
 
-const TeaItem = ({ item, history, deleteTea }) => {
+const TeaItem = ({ item, history, deleteTea, itemCount }) => {
   const { uid } = item;
   return (
     item && (
@@ -24,11 +24,11 @@ const TeaItem = ({ item, history, deleteTea }) => {
             </p> */}
             <div className="options">
               {/* <img src={addImg} alt="Add" /> */}
-              <img
+              {itemCount > 1 && <img
                 src={deleteImg}
                 alt="Delete"
                 onClick={() => deleteTea(item.uid)}
-              />
+              />}
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ const initialState = {
   listTeaAr: [],
   error: "",
   teaObject: {},
+  itemCount: "",
 };
 
 const AddTeaReducer = (state = initialState, action) => {
@@ -44,7 +45,7 @@ const AddTeaReducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         listTeaAr: action.payload && action.payload.items,
-        itemCount: action.payload && action.payload.counter,
+        itemCount: action.payload && action.payload.count,
       };
     case ActionTypes.LIST_TEA_ERROR:
       return {

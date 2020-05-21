@@ -44,8 +44,10 @@ export const listTea = () => (dispatch) => {
 
 export const addTeaItem = (payload) => (dispatch) => {
   dispatch({ type: ActionTypes.ADD_ITEM });
+  debugger
   return addItemService(payload)
     .then((response) => {
+      debugger
       dispatch({
         type: ActionTypes.ADD_ITEM_SUCCESS,
         payload: response,
@@ -54,13 +56,13 @@ export const addTeaItem = (payload) => (dispatch) => {
       toast.success("Item added sucessfully")
       return response;
     })
-
     .catch((error) => {
+      debugger
       dispatch({
         type: ActionTypes.ADD_ITEM_ERROR,
         payload: error,
       });
-      toast.error("Error saving Item")
+      toast.error("Error adding Item")
       errHandler(error);
     });
 };
