@@ -6,6 +6,7 @@ import {
 } from "../../services/tea.service";
 import { errHandler } from "../../services";
 import store from '../index';
+import { toast } from "react-toastify";
 
 const MODULE_NAME = "[TEA]";
 
@@ -50,6 +51,7 @@ export const addTeaItem = (payload) => (dispatch) => {
         payload: response,
       });
       store.dispatch(listTea());
+      toast.success("Item added sucessfully")
       return response;
     })
 
@@ -58,6 +60,7 @@ export const addTeaItem = (payload) => (dispatch) => {
         type: ActionTypes.ADD_ITEM_ERROR,
         payload: error,
       });
+      toast.error("Error saving Item")
       errHandler(error);
     });
 };
@@ -89,6 +92,7 @@ export const deleteTea = (payload) => (dispatch) => {
         type: ActionTypes.DELETE_TEA_SUCCESS,
       });
       store.dispatch(listTea());
+      toast.success("Item deleted sucessfully")
       return response;
     })
     .catch((error) => {
@@ -96,6 +100,7 @@ export const deleteTea = (payload) => (dispatch) => {
         type: ActionTypes.DELETE_TEA_ERROR,
         payload: error,
       });
+      toast.error("Failed to delete item")
       errHandler(error);
     });
 };

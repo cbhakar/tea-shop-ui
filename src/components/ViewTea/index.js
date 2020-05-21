@@ -16,6 +16,7 @@ class ViewTea extends Component {
     const { match } = this.props;
     return match && match.params && match.params.uid;
   };
+  
 
   render() {
     const { history, teaObject } = this.props;
