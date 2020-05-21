@@ -1,7 +1,7 @@
 export default {
-  listTea: () => '/items',
-  addTea: () => '/items',
-  imageUpload: () => '/upload-image',
-  getTea: id => `/item/${id}`,
-  deleteTea: id => `/item/${id}`,
+  listTea: () => 'https://cpdemo1.herokuapp.com/items',
+  addTea: () => 'https://cpdemo1.herokuapp.com/items',
+  imageUpload: () => 'https://cpdemo1.herokuapp.com/upload-image',
+  getTea: id => `https://cpdemo1.herokuapp.com/item/${id}`,
+  deleteTea: id => `https://cpdemo1.herokuapp.com/item/${id}`,
 }
